@@ -6,7 +6,7 @@ Created on Sun Jun  5 20:08:02 2022
 """
 #TODO
 #[1] list of csv files
-#[2]change plot type hist and make conclusion, it is Gaussian function?
+
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -61,10 +61,7 @@ print('\nLooking at the skew value (horizontal push) we can conclude that the di
 print('~~~~~~~~~~~')
 
 
-
-#https://towardsdatascience.com/histograms-and-density-plots-in-python-f6bda88f5ac0
-#plt=df.loc[:,mask].hist(bins=100)
-        
+       
 #ploting histograms of delays
 fig, ax = plt.subplots(3,3, figsize=(25,25))
 ax=ax.ravel() #flaten 3x3 to 1x9
@@ -100,7 +97,6 @@ plt.plot(x, p, 'k', linewidth=2)
 plt.title("Fit Values: {:.2f} and {:.2f}".format(mu, std))
   
 
-
  
 #fix FL_DATE column as date format
 df['FL_DATE']=pd.to_datetime(df.FL_DATE, format='%Y-%m-%d')
@@ -122,12 +118,6 @@ print(DYER,DQYR,DMYR,DWYR,DDYR,DCAR,DORG,DDES)
 #     subset = df[df['DEST']==x]
 #     plt.hist(subset['ARR_DELAY'])
 
-
 print('~~~~~~~~~~~')
 print('Finished.')
-
-# #https://towardsdatascience.com/a-practical-guide-to-implementing-a-random-forest-classifier-in-python-979988d8a263
-# import seaborn
-# seaborn.pairplot(df.drop('ARR_DELAY', axis=1))
-# seaborn.heatmap(df.corr(), xticklabels=df.columns, yticklabels=df.columns)
 
